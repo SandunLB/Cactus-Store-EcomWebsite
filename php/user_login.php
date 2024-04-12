@@ -15,15 +15,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Perform validation and authentication
-    // Example query:
-    // $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password' AND user_type = 'user'";
-    // Execute the query and handle authentication
+    // Validate username and password
+    $sql = "SELECT id FROM users WHERE username = ? AND password = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    // For simplicity, let's assume authentication succeeds
-    $_SESSION['user_id'] = 123; // Replace with actual user ID
-    header("Location: user_panel.php");
-    exit;
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['user_id'] = $row['id'];
+        header("Location: user_panel.php");
+        exit;
+    } else {
+        $error = "Invalid username or password";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -35,6 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h2>User Login</h2>
+    <?php if(isset($error)) { ?>
+        <p><?php echo $error; ?></p>
+    <?php } ?>
     <form method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>

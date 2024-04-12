@@ -1,0 +1,246 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fix the background position */
+    position: relative;
+}
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: rgba(51, 51, 51, 0.4); /* Adjust background color and opacity as needed */
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s;
+}
+
+  
+
+  
+  .admin-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-info img {
+    width: 100px;
+    border-radius: 50%;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #555;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .menu a:hover {
+    background-color: #777;
+  }
+  
+  .logout-btn {
+    margin-top: auto;
+    padding: 10px;
+    background-color: #f00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%;
+  }
+  
+  .logout-btn:hover {
+    background-color: #d00;
+  }
+  
+  /* Content Styles */
+  .content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #content-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  background-color: #ffffff2d;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="file"],
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+  background-color: #f2f2f2;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="file"] {
+  padding: 5px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #45a049;
+}
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea {
+    background-color: #f2f2f246 !important; /* Set your desired background color */
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px)); /* Set fixed width for grid items */
+    grid-gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffff2d;
+    width: 200px; /* Set fixed width for grid items */
+    
+}
+
+.product-card img {
+    max-width: 175px;
+    height: 180px;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    margin-bottom: 5px;
+}
+
+.product-card .delete-btn {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.product-card .delete-btn:hover {
+    background-color: #d00;
+}
+.background {
+    
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add blur effect */
+}
+
+.create-product-container {
+    background-color: #ffffff2d; /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.create-product-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-product-container h2 {
+    margin-bottom: 20px;
+}

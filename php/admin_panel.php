@@ -2,12 +2,10 @@
 include 'connection.php';
 session_start();
 
-
 if(!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    header("Location: login.php");
+    header("Location: admin_login.php");
     exit;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +13,29 @@ if(!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/admin_panel.css">
 </head>
 <body>
-    <h2>Welcome to Admin Panel</h2>
-    <p><a href="logout.php">Logout</a></p>
+<div class="container">
+    <div class="dashboard">
+        <div class="sidebar" id="sidebar">
+            <div class="admin-info">
+                <img src="../css/IMAGES/omegaline.png" alt="Admin Photo">
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="menu">
+                <li><a href="create_product.php" target="content">Create Product</a></li>
+                <li><a href="update_product.php" target="content">Update Product</a></li>
+                <li><a href="delete_product.php" target="content">Delete Product</a></li>
+            </ul>
+            <a class="logout-btn" href="logout.php">Logout</a>
+        </div>
+        <div class="content">
+            
+            <iframe id="content-frame" name="content" src="create_product.php" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+    <script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page E-commerce</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- We'll create this later -->
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.jpg" alt="Logo" class="logo">
+            <span class="site-name">Alo Cactus</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#payment">Payment</a></li>
+            </ul>
+        </nav>
+        <img src="images/shopping-cart.png" alt="Shopping Cart" class="cart-icon">
+    </header>
+
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/product (1).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (2).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (3).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (4).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (1).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (2).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (3).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (4).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (1).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (2).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (3).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/product (4).jpg" alt="Product 1">
+                <div class="product-details">
+                    <h3>Product 1</h3>
+                    <p class="price">$10</p>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more products similarly -->
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be displayed here dynamically -->
+        </div>
+        <button id="checkout">Checkout</button>
+    </section>
+
+    <section id="payment">
+        <h2>Payment</h2>
+        <form id="payment-form">
+            <label for="card">Card Number:</label>
+            <input type="text" id="card" name="card" required>
+            <!-- Add more fields for expiration date, CVV, etc. -->
+            <button type="submit">Pay Now</button>
+        </form>
+    </section>
+
+    <script src="js/script.js"></script> <!-- We'll create this later -->
+</body>
+</html>

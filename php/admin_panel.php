@@ -20,7 +20,7 @@ if(!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     <div class="dashboard">
         <div class="sidebar" id="sidebar">
             <div class="admin-info">
-                <img src="../css/IMAGES/omegaline.png" alt="Admin Photo">
+                <img src="../images/logo.png" alt="Admin Photo">
                 <h3>Admin Panel</h3>
             </div>
             <ul class="menu">

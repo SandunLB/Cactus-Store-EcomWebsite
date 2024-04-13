@@ -1,64 +1,53 @@
-// Array to store cart items
-let cart = [];
-
-// Function to add item to cart
-function addToCart(id) {
-    // Simulated product data, replace with actual product data
-    const product = {
-        id: id,
-        name: `Product ${id}`,
-        price: 10 // Sample price, replace with actual price
-    };
-
-    // Check if item is already in cart
-    const existingItem = cart.find(item => item.id === id);
-    if (existingItem) {
-        // Increment quantity if item is already in cart
-        existingItem.quantity++;
-    } else {
-        // Add item to cart with quantity 1
-        cart.push({ ...product, quantity: 1 });
-    }
-
-    // Update cart display
-    displayCart();
+// Function to update the cart count in the header
+function updateCartCount(count) {
+    const cartCountElement = document.querySelector('.cart-count');
+    cartCountElement.textContent = count;
 }
 
-// Function to display cart items
-function displayCart() {
-    const cartContainer = document.getElementById('cart-items');
-    cartContainer.innerHTML = '';
-
-    cart.forEach(item => {
-        const cartItem = document.createElement('div');
-        cartItem.classList.add('cart-item');
-        cartItem.innerHTML = `
-            <p>${item.name} - $${item.price} - Quantity: ${item.quantity}</p>
-        `;
-        cartContainer.appendChild(cartItem);
-    });
+// Function to add a product to the cart
+function addToCart(productId) {
+    // Logic to add the product to the cart (e.g., update cart in local storage)
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Update cart count in the header
+    updateCartCount(cart.length);
 }
 
-// Function to handle checkout
-function checkout() {
-    // Simulate payment process
-    alert('Payment successful! Thank you for your purchase.');
-
-    // Clear cart after checkout
-    cart = [];
-    displayCart();
+// Function to initialize the cart count
+function initCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCartCount(cart.length);
 }
 
-// Event listeners
-document.addEventListener('DOMContentLoaded', () => {
-    displayCart();
+// Function to handle form submission (e.g., for checkout)
+function handleFormSubmit(event) {
+    event.preventDefault();
+    // Logic to handle form submission (e.g., validate inputs, send data to server)
+    // Example:
+    // const formData = new FormData(event.target);
+    // const serializedForm = Object.fromEntries(formData.entries());
+    // console.log(serializedForm);
+}
 
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', () => {
-            const id = parseInt(button.dataset.id);
-            addToCart(id);
+// Event listener for document ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize cart count
+    initCartCount();
+
+    // Event listener for add to cart buttons
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = button.dataset.productId;
+            addToCart(productId);
         });
     });
 
-    document.getElementById('checkout').addEventListener('click', checkout);
+    // Event listener for form submission (e.g., checkout)
+    const checkoutForm = document.querySelector('#checkout-form');
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', handleFormSubmit);
+    }
 });

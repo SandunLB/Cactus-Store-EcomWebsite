@@ -58,19 +58,38 @@
   
   .menu a {
     display: block;
-    padding: 10px;
+    padding: 15px 20px;
     margin-bottom: 10px;
-    background-color: #555;
-    border-radius: 5px;
+    background-color: #8bc34a; /* Green color for leaves */
+    border-radius: 20px;
     text-decoration: none;
-    color: white;
+    color: #fff;
     text-align: center;
     transition: background-color 0.3s;
-  }
-  
-  .menu a:hover {
-    background-color: #777;
-  }
+    position: relative;
+    overflow: hidden;
+}
+
+.menu a:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('../images/leaf.jpg'); /* Replace 'leaf-background-image-url' with the URL of your leaf background image */
+    background-size: cover;
+    opacity: 0.2;
+    transition: opacity 0.3s;
+}
+
+.menu a:hover:before {
+    opacity: 0.3;
+}
+
+.menu a:hover {
+    background-color: #689f38; /* Darker green color on hover */
+}
   
   .logout-btn {
     margin-top: auto;
@@ -173,48 +192,71 @@ input[type="password"],
 textarea {
     background-color: #f2f2f246 !important; /* Set your desired background color */
 }
+#product_id {
+  /* Your styles for the dropdown select element */
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f246 ;
+  color: #333;
+  font-size: 16px;
+}
+
+#product_id option {
+  /* Your styles for the dropdown options */
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}
+
+#product_id option:hover {
+  /* Your styles for the dropdown options on hover */
+  background-color: #f0f0f0;
+  color: #333;
+}
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px)); /* Set fixed width for grid items */
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  grid-gap: 20px;
+  margin: 0 20px; /* Add margin to create space around the grid */
 }
 
 .product-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #ffffff2d;
-    width: 200px; /* Set fixed width for grid items */
-    
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ffffff2d;
+  width: 200px;
 }
 
 .product-card img {
-    max-width: 175px;
-    height: 180px;
+  max-width: 175px;
+  height: 180px;
 }
 
 .product-card h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .product-card p {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .product-card .delete-btn {
-    background-color: #f00;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .product-card .delete-btn:hover {
-    background-color: #d00;
+  background-color: #d00;
 }
+
 .background {
     
     background-size: cover;
@@ -224,6 +266,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     /* Add blur effect */
 }
 
@@ -231,8 +274,10 @@ textarea {
     background-color: #ffffff2d; /* Semi-transparent white background */
     padding: 20px;
     border-radius: 10px;
+    width: 500px;
     max-width: 500px;
     text-align: center;
+    margin-top: 100px;
 }
 
 .create-product-container form {

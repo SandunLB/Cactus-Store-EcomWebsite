@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $image_filename = uniqid() . '.' . $image_extension;
 
         // Move uploaded file to uploads directory
-        $upload_path = 'uploads/' . $image_filename;
+        $upload_path = '../uploads/' . $image_filename;
         move_uploaded_file($image_tmp_name, $upload_path);
 
         // Set image URL to the uploaded file path

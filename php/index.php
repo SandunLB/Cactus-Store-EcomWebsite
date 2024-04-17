@@ -17,11 +17,31 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Shop</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">My Account</a></li>
+                    <button id="popupBtn">🛒</button>
+                    <span id="cartBadge" style="display: none;">0</span>
+            <div id="popup" class="popup">
+            <span class="close" id="closeBtn">&times;</span>
+                <div class="popup-content">
+               
+                <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <div class="actions">
+            <button class="btn clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+            <p>Total: <span id="cart-total">$0.00</span></p>
+            <button class="btn checkout-btn" onclick="redirectToCheckout()">Checkout</button>
+        </div>
+    </div>
+                
+            </div>
+                    
                 </ul>
+              
+        </div>
             </nav>
     </header>
 
@@ -65,17 +85,7 @@
         </div>
     </section>
 
-    <div class="cart">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items">
-            <!-- Cart items will be dynamically added here -->
-        </ul>
-        <div class="actions">
-            <button class="btn clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-            <p>Total: <span id="cart-total">$0.00</span></p>
-            <button class="btn checkout-btn" onclick="redirectToCheckout()">Checkout</button>
-        </div>
-    </div>
+    
     
     
     <footer>
@@ -104,6 +114,34 @@
 
 
     <script>
+var btn = document.getElementById("popupBtn");
+var popup = document.getElementById("popup");
+var closeBtn = document.getElementById("closeBtn");
+var cartBadge = document.getElementById("cartBadge");
+var cartContent = document.getElementById("cartContent");
+
+var cartCount = 0; // Initialize cart count
+
+btn.onclick = function() {
+    popup.style.display = "block";
+    cartCount++; // Increment cart count
+    cartBadge.innerText = cartCount; // Update badge text
+    cartBadge.style.display = "inline"; // Show badge
+    // Add item to the top of the cart content
+    var newItem = document.createElement("p");
+    newItem.innerText = "Item " + cartCount;
+    cartContent.insertBefore(newItem, cartContent.firstChild);
+}
+
+closeBtn.onclick = function() {
+    popup.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
+}
         let cart = [];
 
         function addToCart(id, name, price) {

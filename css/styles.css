@@ -360,3 +360,75 @@ footer {
 .footer-bottom p {
     margin: 0;
 }
+/* Popup styles */
+/* Button styles */
+#popupBtn {
+    position: relative; /* Make the button container relative */
+    padding: 10px 20px;
+    background-color: #22ff6479; /* Orange color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#popupBtn:hover {
+    background-color: #22ff64b4; /* Lighter shade of orange on hover */
+}
+
+
+/* Badge styles */
+#cartBadge {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 7px;
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-height: 600px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    text-align: center; /* Center align the content */
+}
+
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    position:sticky;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 50px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

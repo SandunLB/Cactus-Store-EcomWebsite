@@ -32,7 +32,7 @@
         </ul>
         <div class="actions">
             <button class="btn clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-            <p>Total: <span id="cart-total">$0.00</span></p>
+            <p>Total: <span id="cart-total">Rs 0.00</span></p>
             <button class="btn checkout-btn" onclick="redirectToCheckout()">Checkout</button>
         </div>
     </div>
@@ -71,7 +71,7 @@
                             <img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['name']; ?>">
                             <h3><?php echo $row['name']; ?></h3>
                             <p><?php echo $row['description']; ?></p>
-                            <p class="price">$<?php echo $row['price']; ?></p>
+                            <p class="price">Rs <?php echo $row['price']; ?></p>
                             <button class="btn add-to-cart-btn" onclick="addToCart(<?php echo $row['id']; ?>, '<?php echo $row['name']; ?>', <?php echo $row['price']; ?>)">Add to Cart</button>
                         </div>
                         <?php
@@ -181,11 +181,11 @@ window.onclick = function(event) {
                 cartItemsHTML += `
                     <li>
                         <div>
-                            <span>${item.name} - $${item.price} x </span>
+                            <span>${item.name} - Rs ${item.price} x </span>
                             <div class="item-quantity">
                                 <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${item.id}, this.value)">
                             </div>
-                            <span class="item-total">$${itemTotal.toFixed(2)}</span>
+                            <span class="item-total">Rs ${itemTotal.toFixed(2)}</span>
                         </div>
                         <button class="Rbtn" onclick="removeFromCart(${item.id})">Remove</button>
                     </li>
@@ -194,7 +194,7 @@ window.onclick = function(event) {
             });
 
             cartItemsElement.innerHTML = cartItemsHTML;
-            cartTotalElement.textContent = `$${total.toFixed(2)}`;
+            cartTotalElement.textContent = `Rs${total.toFixed(2)}`;
         }
         function redirectToCheckout() {
             window.location.href = "checkout.php"; // Redirect to checkout page

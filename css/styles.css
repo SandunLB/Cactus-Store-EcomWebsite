@@ -368,7 +368,7 @@ footer {
     background-color: #22ff6479; /* Orange color */
     color: white;
     border: none;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 100px; /* Rounded corners */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
@@ -396,8 +396,8 @@ footer {
 .popup {
     display: none;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 65px;
+    right: 10px;
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;

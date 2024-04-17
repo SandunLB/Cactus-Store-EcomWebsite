@@ -18,7 +18,7 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Login</a></li>
                     <button id="popupBtn">🛒</button>
                     <span id="cartBadge" style="display: none;">0</span>
             <div id="popup" class="popup">

@@ -38,6 +38,11 @@
     <title>Checkout</title>
     <style>
         body {
+            background-image: url(../images/main.jpg);
+            background-color: #09d3d352;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
             margin: 0;

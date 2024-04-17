@@ -10,8 +10,8 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <img src="images/logo.png" alt="Logo">
-                <span>alo Cactus</span>
+                <img src="../images/logo.png" alt="Logo">
+                <span>Nature ART</span>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -27,8 +27,9 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to Your E-Commerce Store</h1>
-            <p>Discover our latest collections and exclusive offers</p>
+            <h1>🌵Prickle My Fancy Cacti🌵</h1>
+            <h2>Rare and resilient cacti. Bring home nature’s elegance.🌟</h2>
+            <br>
             <a href="#" class="btn">Shop Now</a>
         </div>
     </section>
@@ -77,11 +78,8 @@
     </div>
     
     
-<footer>
+    <footer>
     <div class="footer-content">
-        <div class="footer-logo">
-            <a href="index.html">Your Brand</a>
-        </div>
         <nav class="footer-nav">
             <ul>
                 <li><a href="about.html">About Us</a></li>
@@ -98,9 +96,12 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 Your Brand. All rights reserved.</p>
+        <p>&copy; 2024 Nature ART. All rights reserved.</p>
     </div>
 </footer>
+
+
+
 
     <script>
         let cart = [];

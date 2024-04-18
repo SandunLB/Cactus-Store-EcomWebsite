@@ -37,18 +37,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
+    <link rel="stylesheet" href="../css/registration.css">
 </head>
 <body>
     <h2>Admin Login</h2>
     <?php if(isset($error)) { ?>
         <p><?php echo $error; ?></p>
     <?php } ?>
+    <div class="container-box">
     <form method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
-        <button type="submit">Login</button>
+        <div>
+        <input type="submit" value="Login">
+    </div>
     </form>
+    </div>
 </body>
 </html>

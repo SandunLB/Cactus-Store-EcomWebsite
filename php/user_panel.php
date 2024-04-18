@@ -1,18 +1,15 @@
 <?php
-// After verifying username and password
-if (password_verify($password, $hashed_password)) {
-    // Start a new session
-    session_start();
-    
-    // Store user ID in session variable
-    $_SESSION['user_id'] = $id;
+session_start();
 
-    // Redirect user to user panel
-    header("Location: user_panel.php");
-    exit();
-} else {
-    // Invalid password
-    $password_err = "Invalid password.";
+// Initialize $account_link with the default link
+$account_link = '<li><a href="user_login.php">My Account</a></li>';
+
+// Check if user is logged in
+if (isset($_SESSION['user_id'])) {
+    // User is logged in, fetch their username from the session
+    $username = $_SESSION['username'];
+    // Update $account_link with the logged-in user's name
+    $account_link = '<li><a href="#">'.$username.'\'s Account</a></li>';
 }
 ?>
 <!DOCTYPE html>

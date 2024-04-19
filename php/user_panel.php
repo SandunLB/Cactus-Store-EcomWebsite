@@ -87,6 +87,11 @@ if (isset($_SESSION['user_id'])) {
                             <p><?php echo $row['description']; ?></p>
                             <p class="price">Rs <?php echo $row['price']; ?></p>
                             <button class="btn add-to-cart-btn" onclick="addToCart(<?php echo $row['id']; ?>, '<?php echo $row['name']; ?>', <?php echo $row['price']; ?>)">Add to Cart</button>
+                            <button class="btnw add-to-wishlist-btn" onclick="addToWishlist(<?php echo $row['id']; ?>)">
+                                &#x2665;
+                            </button>
+
+
                         </div>
                         <?php
                     }
@@ -128,6 +133,19 @@ if (isset($_SESSION['user_id'])) {
 
 
     <script>
+        function addToWishlist(productId) {
+    // Send AJAX request to add product to wishlist
+    $.ajax({
+        type: 'POST',
+        url: 'add_to_wishlist.php',
+        data: { productId: productId },
+        success: function(response) {
+            alert('Product added to wishlist successfully!');
+        }
+    });
+}
+
+
 var btn = document.getElementById("popupBtn");
 var popup = document.getElementById("popup");
 var closeBtn = document.getElementById("closeBtn");

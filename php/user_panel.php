@@ -29,10 +29,8 @@ if (isset($_SESSION['user_id'])) {
             </div>
             <nav class="main-nav">
                 <ul>
-                <li><a href="index.php">Home</a></li>
-                    <li><a href="index.php">Shop</a></li>
+                <li><a href="user_panel.php">Home</a></li>
                     <li><a href="contact_us.php">Contact</a></li>
-                    <li><a href="#">My Account</a></li>
                     <button id="popupBtn">🛒</button>
                     <span id="cartBadge" style="display: none;">0</span>
             <div id="popup" class="popup">
@@ -42,7 +40,7 @@ if (isset($_SESSION['user_id'])) {
                 <div class="cart">
         <h2>Shopping Cart</h2>
         <ul id="cart-items">
-            <!-- Cart items will be dynamically added here -->
+          
         </ul>
         <div class="actions">
             <button class="btn clear-cart-btn" onclick="clearCart()">Clear Cart</button>

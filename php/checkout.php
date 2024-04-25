@@ -1,8 +1,8 @@
 <?php
-        include 'connection.php'; // Include database connection
+        include 'connection.php'; 
         
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Retrieve form data
+            
             $name = $_POST["name"];
             $email = $_POST["email"];
             $phone = $_POST["phone"];
@@ -13,21 +13,23 @@
             $paypalEmail = $_POST["paypal_email"] ?? "";
             $bankDetails = $_POST["bank_details"] ?? "";
 
-            // Prepare and execute SQL INSERT statement
+            
             $sql = "INSERT INTO orders (name, email, phone, payment_method, card_number, expiry, cvv, paypal_email, bank_details)
                     VALUES ('$name', '$email', '$phone', '$paymentMethod', '$cardNumber', '$expiry', '$cvv', '$paypalEmail', '$bankDetails')";
 
+           
             if ($conn->query($sql) === TRUE) {
-                echo "Order placed successfully! Redirecting...";
-                // Redirect to thank you page after 5 seconds
-                header("refresh:5;url=thank_you.php");
-                exit();
+            
+            echo "<h1 style='color: #4CAF50; font-weight: bold; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);'>Order placed successfully! Redirecting...</h1>";
+           
+            header("refresh:2;url=thank_you.php");
+            exit();
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+            
+            echo "<h1 style='color: #FF5722; font-weight: bold; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);'>Error: " . $sql . "<br>" . $conn->error . "</h1>";
             }
         }
 
-        // Close connection
         $conn->close();
         ?>
 <!DOCTYPE html>
@@ -130,6 +132,21 @@
         .payment-details.show {
             display: block;
         }
+        .total-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .total-container p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .total-container span {
+            font-weight: bold;
+            color: #007bff; 
+        }
+        
     </style>
 </head>
 <body>
@@ -179,10 +196,18 @@
                 <label for="bank-details">Bank Details:</label>
                 <textarea id="bank-details" name="bank_details"></textarea><br>
             </div>
+            <div class="total-container">
+        <?php
+        
+        $totalPrice = $_GET['total'] ?? 'Rs 0.00';
+        echo "<p>Total to pay: <span>$totalPrice</span></p>";
+        ?>
+    </div>
 
             <input type="submit" value="Complete Purchase">
         </form>
     </div>
+   
 
     <script>
         function togglePaymentDetails(paymentMethod) {
@@ -193,3 +218,5 @@
             document.getElementById(paymentMethod).classList.add('show');
         }
     </script>
+</body>
+</html>

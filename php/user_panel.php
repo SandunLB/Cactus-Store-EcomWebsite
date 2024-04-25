@@ -29,9 +29,9 @@ if (isset($_SESSION['user_id'])) {
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Contact</a></li>
+                <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php">Shop</a></li>
+                    <li><a href="contact_us.php">Contact</a></li>
                     <li><a href="#">My Account</a></li>
                     <button id="popupBtn">🛒</button>
                     <span id="cartBadge" style="display: none;">0</span>
@@ -114,11 +114,7 @@ if (isset($_SESSION['user_id'])) {
     <div class="footer-content">
         <nav class="footer-nav">
             <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="faq.html">FAQs</a></li>
-                <li><a href="terms.html">Terms and Conditions</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="contact_us.php">Contact Us</a></li>
             </ul>
         </nav>
         <div class="social-icons">
@@ -220,8 +216,13 @@ window.onclick = function(event) {
             cartTotalElement.textContent = `Rs${total.toFixed(2)}`;
         }
         function redirectToCheckout() {
-            window.location.href = "checkout.php"; // Redirect to checkout page
-        }
+    // Get the total price from the cart
+    var totalPrice = document.getElementById("cart-total").innerText;
+    // Encode the total price for URL
+    var encodedPrice = encodeURIComponent(totalPrice);
+    // Redirect to the checkout page with the total price in the URL parameters
+    window.location.href = "checkout.php?total=" + encodedPrice;
+}
     </script>
 </body>
 </html>

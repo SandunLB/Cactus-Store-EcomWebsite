@@ -15,10 +15,10 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php">Shop</a></li>
+                    <li><a href="contact_us.php">Contact</a></li>
+                    <li><a href="user_login.php">Login</a></li>
                     <button id="popupBtn">🛒</button>
                     <span id="cartBadge" style="display: none;">0</span>
             <div id="popup" class="popup">
@@ -92,11 +92,7 @@
     <div class="footer-content">
         <nav class="footer-nav">
             <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="faq.html">FAQs</a></li>
-                <li><a href="terms.html">Terms and Conditions</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="contact_us.php">Contact Us</a></li>
             </ul>
         </nav>
         <div class="social-icons">

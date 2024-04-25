@@ -33,7 +33,7 @@ if (isset($_SESSION['user_id'])) {
                 <li><a href="user_panel.php">Home</a></li>
                     <li><a href="contact_us.php">Contact</a></li>
                     <?php echo $account_link; ?>
-                    <button onclick="openPopup()">Open Popup</button>
+                    <button class="heart" onclick="openPopup()">💚</button>
                     <div id="popup2" class="popup2">
                     <span class="close2" onclick="closePopup()">&times;</span>
                     <div class="popup-content2">

@@ -214,6 +214,16 @@ header {
 .btn:hover {
     background-color: #0056b3;
 }
+.heart{
+    border: none;
+    font-size: 20px;
+    padding: 0 10px 0 10px;
+    background-color: transparent;
+    transition: transform 0.3s;
+}
+.heart:hover{
+    transform: scale(1.2);
+}
 
 .cart {
     border: 1px solid #ccc;
@@ -381,20 +391,15 @@ footer {
 /* Popup styles */
 /* Button styles */
 #popupBtn {
-    position: relative; /* Make the button container relative */
-    padding: 10px 20px;
-    background-color: #22ff6479; /* Orange color */
-    color: white;
     border: none;
-    border-radius: 100px; /* Rounded corners */
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-size: 20px;
+    padding: 0 10px 0 10px;
+    background-color: transparent;
+    transition: transform 0.3s;
 }
 
 #popupBtn:hover {
-    background-color: #22ff64b4; /* Lighter shade of orange on hover */
+    transform: scale(1.2);
 }
 
 

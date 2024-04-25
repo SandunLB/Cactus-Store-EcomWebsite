@@ -49,11 +49,11 @@ $wishlistResult = $conn->query($wishlistQuery);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Wishlist</title>
-    <!-- Add your CSS stylesheets here -->
+    
     <style>
 /* CSS styles for the wishlist container */
 .wishlist-container {
-    max-width: 300px; /* Adjust as needed */
+    max-width: 300px;
     margin: 0 auto;
     padding: 10px;
     background-color: #f9f9f9;
@@ -71,8 +71,8 @@ $wishlistResult = $conn->query($wishlistQuery);
 
 /* CSS styles for wishlist item image */
 .wishlist-item img {
-    max-width: 60px; /* Adjust as needed */
-    max-height: 60px; /* Adjust as needed */
+    max-width: 60px; 
+    max-height: 60px; 
     margin-right: 10px;
 }
 

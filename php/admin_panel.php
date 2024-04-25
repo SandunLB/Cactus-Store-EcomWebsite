@@ -27,6 +27,12 @@ if(!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
                 <li><a href="create_product.php" target="content">Create Product</a></li>
                 <li><a href="update_product.php" target="content">Update Product</a></li>
                 <li><a href="delete_product.php" target="content">Delete Product</a></li>
+                <br>
+                <br>
+                <br>
+                <li><a href="view_orders.php" target="content">View Orders</a></li>
+                <li><a href="view_users.php" target="content">View Users</a></li>
+                <li><a href="view_messages.php" target="content">Messages</a></li>
             </ul>
             <a class="logout-btn" href="logout.php">Logout</a>
         </div>

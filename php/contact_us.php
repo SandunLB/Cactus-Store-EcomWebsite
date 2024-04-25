@@ -83,10 +83,8 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                <li><a href="index.php">Home</a></li>
-                    <li><a href="index.php">Shop</a></li>
+                <li><a href="user_panel.php">Home</a></li>
                     <li><a href="contact_us.php">Contact</a></li>
-                    <li><a href="#">My Account</a></li>
                     <button id="popupBtn">🛒</button>
                     <span id="cartBadge" style="display: none;">0</span>
             <div id="popup" class="popup">

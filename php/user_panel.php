@@ -6,10 +6,11 @@ $account_link = '<li><a href="user_login.php">My Account</a></li>';
 
 // Check if user is logged in
 if (isset($_SESSION['user_id'])) {
-    // User is logged in, fetch their username from the session
+    // User is logged in, fetch their username and user ID from the session
     $username = $_SESSION['username'];
-    // Update $account_link with the logged-in user's name
-    $account_link = '<li><a href="#">'.$username.'\'s Account</a></li>';
+    $user_id = $_SESSION['user_id'];
+    // Update $account_link with the logged-in user's name and ID
+    $account_link = '<li><a href="#">'.$username.'\'s Account (ID: '.$user_id.')</a></li>';
 }
 ?>
 <!DOCTYPE html>
@@ -31,6 +32,14 @@ if (isset($_SESSION['user_id'])) {
                 <ul>
                 <li><a href="user_panel.php">Home</a></li>
                     <li><a href="contact_us.php">Contact</a></li>
+                    <?php echo $account_link; ?>
+                    <button onclick="openPopup()">Open Popup</button>
+                    <div id="popup2" class="popup2">
+                    <span class="close2" onclick="closePopup()">&times;</span>
+                    <div class="popup-content2">
+                    <iframe id="iframe2" src="" frameborder="0"></iframe>
+                    </div>
+                    </div>
                     <button id="popupBtn">🛒</button>
                     <span id="cartBadge" style="display: none;">0</span>
             <div id="popup" class="popup">
@@ -131,6 +140,17 @@ if (isset($_SESSION['user_id'])) {
 
     <script>
 
+function openPopup() {
+  var popup = document.getElementById('popup2');
+  var iframe = document.getElementById('iframe2');
+  iframe.src = 'wishlist.php'; // URL of the webpage you want to display
+  popup.style.display = 'block';
+}
+
+function closePopup() {
+  var popup = document.getElementById('popup2');
+  popup.style.display = 'none';
+}
 var btn = document.getElementById("popupBtn");
 var popup = document.getElementById("popup");
 var closeBtn = document.getElementById("closeBtn");

@@ -18,4 +18,5 @@ This project is a simple website for a cactus store. It allows users to browse v
 5. **Add to Cart**: Authenticated users can add cacti to their shopping cart.
 6. **Checkout**: Authenticated users can proceed to checkout, where they can review their cart and complete their purchase.
 7. **Admin Panel**: Admin users can add, edit, and delete cacti from the inventory.
-
+8. **Contacts Us** : Users Can Send Messages to the Admin 
+9.**Wishlist**

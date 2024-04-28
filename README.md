@@ -38,3 +38,19 @@ Explore the various features that make our Cactus Store website a standout desti
 11. **Contact Us**: Open lines of communication are vital for customer support. Users can reach out to the admin team with inquiries, feedback, or assistance requests, ensuring prompt and personalized responses.
 
 12. **Wishlist**: Users can curate their wishlist of favorite cacti, making it easy to save and revisit their preferred items for future purchases.
+
+
+## How to Use
+
+1. **Clone the Repository**: Clone the repository to your local machine using `git clone https://github.com/your-username/cactus-store_website.git`.
+
+2. **Set Up the Database**: Create a MySQL database and import the provided SQL file (`cactus.sql`) to set up the necessary tables and data.
+
+3. **Configure Database Connection**: Update the database connection details in the `connection.php` file to match your MySQL database credentials.
+
+4. **Host the Website**: Host the website on a web server that supports PHP and MySQL. You can use platforms like XAMPP, WAMP, or deploy it on a live server.
+
+5. **Access the Website**: Once the website is hosted, navigate to the URL in your web browser to access the Cactus Store website.
+
+6. **Explore and Enjoy!**: You're all set! Browse through the various features, explore different cacti, add them to your cart, and enjoy a seamless shopping experience.
+
